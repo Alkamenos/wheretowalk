@@ -1,22 +1,14 @@
-import GoogleMapReact from 'google-map-react';
+import React from "react";
+import { Map, YMaps } from "react-yandex-maps";
+
 const Main = () => {
-
-
-    return(
-        <div style={{ height: '100vh', width: '100%' }}>
-    <GoogleMapReact
-        bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-    defaultCenter={this.props.center}
-    defaultZoom={this.props.zoom}
-    >
-    <AnyReactComponent
-        lat={59.955413}
-    lng={30.337844}
-    text="My Marker"
-        />
-        </GoogleMapReact>
-        </div>
-    );
+  return (
+    <div style={{ height: "100vh", width: "100%" }}>
+      <YMaps>
+        <Map defaultState={{ center: [55.75, 37.57], zoom: 9 }} />
+      </YMaps>
+    </div>
+  );
 };
 
 export default Main;

@@ -1,13 +1,6 @@
 {
-  "exclude": [
-    "./node_modules/",
-    "./dist/",
-    "./test/"
-  ],
-  "extension": [
-    "ts"
-  ],
+  "exclude": ["./node_modules/", "./dist/", "./test/"],
+  "extension": ["ts"],
   "spec": "src/**/*.spec.ts",
   "require": "test/babel-register.js"
-
 }
