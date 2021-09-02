@@ -70,7 +70,7 @@ function Header(props: HeaderProps) {
             <Grid item xs />
             <Grid item>
               <Link className={classes.link} href="#" variant="body2">
-                Go to docs
+                Помощь
               </Link>
             </Grid>
             <Grid item>

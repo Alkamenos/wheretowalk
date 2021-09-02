@@ -2,6 +2,7 @@
  * Copyright (c) 2021. Written by Leonid Artemev (me@artemev.it)
  */
 
+import { Box } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import Drawer, { DrawerProps } from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
@@ -14,6 +15,7 @@ import {
   withStyles,
   WithStyles,
 } from "@material-ui/core/styles";
+import { Pets } from "@material-ui/icons";
 import DnsRoundedIcon from "@material-ui/icons/DnsRounded";
 import HomeIcon from "@material-ui/icons/Home";
 import PeopleIcon from "@material-ui/icons/People";
@@ -30,22 +32,22 @@ import React from "react";
 
 const categories = [
   {
-    id: "Develop",
+    id: "Навигация",
     children: [
-      { id: "Authentication", icon: <PeopleIcon />, active: true },
-      { id: "Database", icon: <DnsRoundedIcon /> },
-      { id: "Storage", icon: <PermMediaOutlinedIcon /> },
-      { id: "Hosting", icon: <PublicIcon /> },
-      { id: "Functions", icon: <SettingsEthernetIcon /> },
-      { id: "ML Kit", icon: <SettingsInputComponentIcon /> },
+      { id: "Карта", icon: <PeopleIcon />, active: true },
+      { id: "Собаки", icon: <DnsRoundedIcon /> },
+      { id: "Друзья", icon: <PermMediaOutlinedIcon /> },
+      { id: "События", icon: <PublicIcon /> },
+      { id: "Организации", icon: <SettingsEthernetIcon /> },
+      { id: "Поиск", icon: <SettingsInputComponentIcon /> },
     ],
   },
   {
-    id: "Quality",
+    id: "Сервисы",
     children: [
-      { id: "Analytics", icon: <SettingsIcon /> },
-      { id: "Performance", icon: <TimerIcon /> },
-      { id: "Test Lab", icon: <PhonelinkSetupIcon /> },
+      { id: "Добавить место", icon: <SettingsIcon /> },
+      { id: "Потеряли собаку?", icon: <TimerIcon /> },
+      { id: "Нашли собаку?", icon: <PhonelinkSetupIcon /> },
     ],
   },
 ];
@@ -75,6 +77,8 @@ const styles = (theme: Theme) =>
     firebase: {
       fontSize: 24,
       color: theme.palette.common.white,
+      display: "flex",
+      alignItems: "centr",
     },
     itemActiveItem: {
       color: "#4fc3f7",
@@ -103,7 +107,8 @@ function Navigator(props: NavigatorProps) {
         <ListItem
           className={clsx(classes.firebase, classes.item, classes.itemCategory)}
         >
-          Wheretowalk
+          <Pets fontSize="large" color="primary" />
+          <Box ml={1}>Wheretowalk</Box>
         </ListItem>
         <ListItem className={clsx(classes.item, classes.itemCategory)}>
           <ListItemIcon className={classes.itemIcon}>
@@ -114,7 +119,7 @@ function Navigator(props: NavigatorProps) {
               primary: classes.itemPrimary,
             }}
           >
-            Project Overview
+            Главная
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (

@@ -4,11 +4,21 @@
 
 import { getDatabase, onValue, ref, set } from "firebase/database";
 
-export function addPlace(id: string, title: string, coords: number[]) {
+export function addPlace(
+  id: string,
+  title: string,
+  from: string,
+  to: string,
+  breeds: string,
+  coords: number[]
+) {
   const db = getDatabase();
   set(ref(db, "places/" + id), {
     title,
     coords,
+    from,
+    to,
+    breeds,
   });
 }
 

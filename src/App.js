@@ -4,6 +4,7 @@
 
 import { initializeApp } from "firebase/app";
 import React from "react";
+import { YMaps } from "react-yandex-maps";
 import "./App.css";
 import Paperbase from "./Paperbase";
 
@@ -24,7 +25,9 @@ initializeApp(firebaseConfig);
 function App() {
   return (
     <div className="App">
-      <Paperbase />
+      <YMaps query={{ apikey: "03a21dbf-0bd0-4788-901d-53dabb409285" }}>
+        <Paperbase />
+      </YMaps>
     </div>
   );
 }
